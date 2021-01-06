@@ -1,16 +1,17 @@
-import React from 'react';
-
-import Auxiliary from '../../hoc/Auxiliary';
+import React from "react";
+import Auxiliary from "../../hoc/Auxiliary";
+import classes from "./Layout.module.css";
+import Toolbar from "../Navigation/Toolbar/Toolbar";
+import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 
 function Layout(props) {
-    return (
-        <Auxiliary>
-            <div>Toolbar, sideDrawer, Backdrop</div>
-            <main>
-                {props.children}
-            </main>
-        </Auxiliary>
-    )
+  return (
+    <Auxiliary>
+      <Toolbar />
+      <SideDrawer />
+      <main className={classes.Content}>{props.children}</main>
+    </Auxiliary>
+  );
 }
 
-export default Layout
+export default Layout;
